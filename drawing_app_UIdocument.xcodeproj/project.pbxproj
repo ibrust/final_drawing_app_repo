@@ -9,13 +9,34 @@
 /* Begin PBXBuildFile section */
 		3A4D17862581F27F003DF737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17852581F27F003DF737 /* AppDelegate.swift */; };
 		3A4D17882581F27F003DF737 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */; };
-		3A4D178A2581F27F003DF737 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17892581F27F003DF737 /* DocumentViewController.swift */; };
 		3A4D178C2581F27F003DF737 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D178B2581F27F003DF737 /* Document.swift */; };
 		3A4D178F2581F27F003DF737 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D178D2581F27F003DF737 /* Main.storyboard */; };
 		3A4D17912581F285003DF737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D17902581F285003DF737 /* Assets.xcassets */; };
 		3A4D17942581F285003DF737 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A4D17922581F285003DF737 /* LaunchScreen.storyboard */; };
 		3A4D179F2581F286003DF737 /* drawing_app_UIdocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D179E2581F286003DF737 /* drawing_app_UIdocumentTests.swift */; };
 		3A4D17AA2581F286003DF737 /* drawing_app_UIdocumentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17A92581F286003DF737 /* drawing_app_UIdocumentUITests.swift */; };
+		3A4D17C82581F369003DF737 /* UtilityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C22581F368003DF737 /* UtilityController.swift */; };
+		3A4D17C92581F369003DF737 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C32581F368003DF737 /* MainController.swift */; };
+		3A4D17CA2581F369003DF737 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C42581F368003DF737 /* ColorController.swift */; };
+		3A4D17CB2581F369003DF737 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C52581F368003DF737 /* CanvasController.swift */; };
+		3A4D17CC2581F369003DF737 /* DrawController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C62581F369003DF737 /* DrawController.swift */; };
+		3A4D17CD2581F369003DF737 /* EmojiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17C72581F369003DF737 /* EmojiController.swift */; };
+		3A4D17E02581F391003DF737 /* CustomBezierPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D22581F38F003DF737 /* CustomBezierPath.swift */; };
+		3A4D17E22581F391003DF737 /* BezierPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D42581F390003DF737 /* BezierPaths.swift */; };
+		3A4D17E32581F391003DF737 /* Emojis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D52581F390003DF737 /* Emojis.swift */; };
+		3A4D17E42581F391003DF737 /* DrawingModes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D62581F390003DF737 /* DrawingModes.swift */; };
+		3A4D17E52581F391003DF737 /* FileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D72581F390003DF737 /* FileModel.swift */; };
+		3A4D17E62581F391003DF737 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17D82581F390003DF737 /* Renderer.swift */; };
+		3A4D17E72581F391003DF737 /* PaintBucket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17DA2581F390003DF737 /* PaintBucket.swift */; };
+		3A4D17E82581F391003DF737 /* ImageBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17DB2581F390003DF737 /* ImageBuffer.swift */; };
+		3A4D17E92581F391003DF737 /* Pixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17DC2581F390003DF737 /* Pixel.swift */; };
+		3A4D17EA2581F391003DF737 /* StrokeOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17DD2581F391003DF737 /* StrokeOptions.swift */; };
+		3A4D17F72581F3CF003DF737 /* ColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F22581F3CF003DF737 /* ColorCell.swift */; };
+		3A4D17F82581F3CF003DF737 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F32581F3CF003DF737 /* Canvas.swift */; };
+		3A4D17F92581F3CF003DF737 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F42581F3CF003DF737 /* EmojiCell.swift */; };
+		3A4D17FA2581F3CF003DF737 /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F52581F3CF003DF737 /* TextInputCell.swift */; };
+		3A4D17FB2581F3CF003DF737 /* AddEmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */; };
+		3A4D18002581F41A003DF737 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17FF2581F41A003DF737 /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +60,6 @@
 		3A4D17822581F27F003DF737 /* drawing_app_UIdocument.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawing_app_UIdocument.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D17852581F27F003DF737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		3A4D17892581F27F003DF737 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		3A4D178B2581F27F003DF737 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		3A4D178E2581F27F003DF737 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A4D17902581F285003DF737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +71,28 @@
 		3A4D17A52581F286003DF737 /* drawing_app_UIdocumentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drawing_app_UIdocumentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D17A92581F286003DF737 /* drawing_app_UIdocumentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawing_app_UIdocumentUITests.swift; sourceTree = "<group>"; };
 		3A4D17AB2581F286003DF737 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A4D17C22581F368003DF737 /* UtilityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityController.swift; sourceTree = "<group>"; };
+		3A4D17C32581F368003DF737 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		3A4D17C42581F368003DF737 /* ColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		3A4D17C52581F368003DF737 /* CanvasController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
+		3A4D17C62581F369003DF737 /* DrawController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawController.swift; sourceTree = "<group>"; };
+		3A4D17C72581F369003DF737 /* EmojiController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiController.swift; sourceTree = "<group>"; };
+		3A4D17D22581F38F003DF737 /* CustomBezierPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBezierPath.swift; sourceTree = "<group>"; };
+		3A4D17D42581F390003DF737 /* BezierPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BezierPaths.swift; sourceTree = "<group>"; };
+		3A4D17D52581F390003DF737 /* Emojis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emojis.swift; sourceTree = "<group>"; };
+		3A4D17D62581F390003DF737 /* DrawingModes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawingModes.swift; sourceTree = "<group>"; };
+		3A4D17D72581F390003DF737 /* FileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileModel.swift; sourceTree = "<group>"; };
+		3A4D17D82581F390003DF737 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
+		3A4D17DA2581F390003DF737 /* PaintBucket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintBucket.swift; sourceTree = "<group>"; };
+		3A4D17DB2581F390003DF737 /* ImageBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageBuffer.swift; sourceTree = "<group>"; };
+		3A4D17DC2581F390003DF737 /* Pixel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pixel.swift; sourceTree = "<group>"; };
+		3A4D17DD2581F391003DF737 /* StrokeOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StrokeOptions.swift; sourceTree = "<group>"; };
+		3A4D17F22581F3CF003DF737 /* ColorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCell.swift; sourceTree = "<group>"; };
+		3A4D17F32581F3CF003DF737 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		3A4D17F42581F3CF003DF737 /* EmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
+		3A4D17F52581F3CF003DF737 /* TextInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
+		3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmojiCell.swift; sourceTree = "<group>"; };
+		3A4D17FF2581F41A003DF737 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4D17842581F27F003DF737 /* drawing_app_UIdocument */,
+				3A4D17C02581F306003DF737 /* utilities */,
 				3A4D179D2581F286003DF737 /* drawing_app_UIdocumentTests */,
 				3A4D17A82581F286003DF737 /* drawing_app_UIdocumentUITests */,
 				3A4D17832581F27F003DF737 /* Products */,
@@ -101,14 +144,9 @@
 		3A4D17842581F27F003DF737 /* drawing_app_UIdocument */ = {
 			isa = PBXGroup;
 			children = (
-				3A4D17852581F27F003DF737 /* AppDelegate.swift */,
-				3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */,
-				3A4D17892581F27F003DF737 /* DocumentViewController.swift */,
-				3A4D178B2581F27F003DF737 /* Document.swift */,
-				3A4D178D2581F27F003DF737 /* Main.storyboard */,
-				3A4D17902581F285003DF737 /* Assets.xcassets */,
-				3A4D17922581F285003DF737 /* LaunchScreen.storyboard */,
-				3A4D17952581F285003DF737 /* Info.plist */,
+				3A4D17BF2581F2E1003DF737 /* controllers */,
+				3A4D17BE2581F2DC003DF737 /* models */,
+				3A4D17BD2581F2D4003DF737 /* views */,
 			);
 			path = drawing_app_UIdocument;
 			sourceTree = "<group>";
@@ -129,6 +167,71 @@
 				3A4D17AB2581F286003DF737 /* Info.plist */,
 			);
 			path = drawing_app_UIdocumentUITests;
+			sourceTree = "<group>";
+		};
+		3A4D17BD2581F2D4003DF737 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */,
+				3A4D17F32581F3CF003DF737 /* Canvas.swift */,
+				3A4D17F22581F3CF003DF737 /* ColorCell.swift */,
+				3A4D17F42581F3CF003DF737 /* EmojiCell.swift */,
+				3A4D178D2581F27F003DF737 /* Main.storyboard */,
+				3A4D17F52581F3CF003DF737 /* TextInputCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		3A4D17BE2581F2DC003DF737 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D17D42581F390003DF737 /* BezierPaths.swift */,
+				3A4D17D22581F38F003DF737 /* CustomBezierPath.swift */,
+				3A4D17D62581F390003DF737 /* DrawingModes.swift */,
+				3A4D17D52581F390003DF737 /* Emojis.swift */,
+				3A4D17D72581F390003DF737 /* FileModel.swift */,
+				3A4D178B2581F27F003DF737 /* Document.swift */,
+				3A4D17D92581F390003DF737 /* Fill Tool */,
+				3A4D17D82581F390003DF737 /* Renderer.swift */,
+				3A4D17DD2581F391003DF737 /* StrokeOptions.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		3A4D17BF2581F2E1003DF737 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D17C52581F368003DF737 /* CanvasController.swift */,
+				3A4D17C42581F368003DF737 /* ColorController.swift */,
+				3A4D17C62581F369003DF737 /* DrawController.swift */,
+				3A4D17C72581F369003DF737 /* EmojiController.swift */,
+				3A4D17C32581F368003DF737 /* MainController.swift */,
+				3A4D17C22581F368003DF737 /* UtilityController.swift */,
+				3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		3A4D17C02581F306003DF737 /* utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D17852581F27F003DF737 /* AppDelegate.swift */,
+				3A4D17902581F285003DF737 /* Assets.xcassets */,
+				3A4D17FF2581F41A003DF737 /* Utilities.swift */,
+				3A4D17922581F285003DF737 /* LaunchScreen.storyboard */,
+				3A4D17952581F285003DF737 /* Info.plist */,
+			);
+			path = utilities;
+			sourceTree = "<group>";
+		};
+		3A4D17D92581F390003DF737 /* Fill Tool */ = {
+			isa = PBXGroup;
+			children = (
+				3A4D17DA2581F390003DF737 /* PaintBucket.swift */,
+				3A4D17DB2581F390003DF737 /* ImageBuffer.swift */,
+				3A4D17DC2581F390003DF737 /* Pixel.swift */,
+			);
+			path = "Fill Tool";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +364,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A4D17E32581F391003DF737 /* Emojis.swift in Sources */,
+				3A4D17CB2581F369003DF737 /* CanvasController.swift in Sources */,
+				3A4D17E02581F391003DF737 /* CustomBezierPath.swift in Sources */,
+				3A4D17CC2581F369003DF737 /* DrawController.swift in Sources */,
 				3A4D178C2581F27F003DF737 /* Document.swift in Sources */,
-				3A4D178A2581F27F003DF737 /* DocumentViewController.swift in Sources */,
+				3A4D17E42581F391003DF737 /* DrawingModes.swift in Sources */,
+				3A4D17F92581F3CF003DF737 /* EmojiCell.swift in Sources */,
+				3A4D17CA2581F369003DF737 /* ColorController.swift in Sources */,
+				3A4D17E72581F391003DF737 /* PaintBucket.swift in Sources */,
+				3A4D17FA2581F3CF003DF737 /* TextInputCell.swift in Sources */,
+				3A4D17FB2581F3CF003DF737 /* AddEmojiCell.swift in Sources */,
 				3A4D17882581F27F003DF737 /* DocumentBrowserViewController.swift in Sources */,
+				3A4D17CD2581F369003DF737 /* EmojiController.swift in Sources */,
+				3A4D17E92581F391003DF737 /* Pixel.swift in Sources */,
+				3A4D17E82581F391003DF737 /* ImageBuffer.swift in Sources */,
+				3A4D17E52581F391003DF737 /* FileModel.swift in Sources */,
+				3A4D17F72581F3CF003DF737 /* ColorCell.swift in Sources */,
+				3A4D17F82581F3CF003DF737 /* Canvas.swift in Sources */,
+				3A4D17C82581F369003DF737 /* UtilityController.swift in Sources */,
 				3A4D17862581F27F003DF737 /* AppDelegate.swift in Sources */,
+				3A4D17EA2581F391003DF737 /* StrokeOptions.swift in Sources */,
+				3A4D17E62581F391003DF737 /* Renderer.swift in Sources */,
+				3A4D17C92581F369003DF737 /* MainController.swift in Sources */,
+				3A4D18002581F41A003DF737 /* Utilities.swift in Sources */,
+				3A4D17E22581F391003DF737 /* BezierPaths.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +565,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = drawing_app_UIdocument/Info.plist;
+				INFOPLIST_FILE = utilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,7 +583,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = drawing_app_UIdocument/Info.plist;
+				INFOPLIST_FILE = utilities/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
