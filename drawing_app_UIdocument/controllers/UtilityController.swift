@@ -23,9 +23,8 @@ class Utility_Controller: UIViewController {
     
     @IBAction func open_button_handler(_ sender: UIButton) {
         save_button_handler()
-        print("dismiss?", main_controller_reference)
+        document?.thumbnail = canvas_controller_reference?.merge_imageview_and_canvas()
         main_controller_reference?.dismiss(animated: true)
-        print("dismiss?")
         document?.close()
     }
     
