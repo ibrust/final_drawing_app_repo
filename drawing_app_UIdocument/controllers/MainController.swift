@@ -5,6 +5,7 @@ class Main_Controller: UIViewController {
     
     var canvas_controller_reference: Canvas_Controller? = nil
     let TOTAL_CHILDREN = 5
+    var document: Document? = nil
     
     @IBAction func toolbar_draw_button_press(_ sender: UIBarButtonItem) {
         hide_containers()
@@ -65,7 +66,9 @@ class Main_Controller: UIViewController {
                     child.canvas_controller_reference = self.canvas_controller_reference
                 } else if let child = child as? Utility_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
-                    child.load_last_document()
+                    child.main_controller_reference = self
+                    child.document = self.document
+                    child.load_document()
                 }
             }
         }

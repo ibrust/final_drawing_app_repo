@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iEn-fU-dGo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
@@ -28,7 +28,7 @@
         <!--Main_Controller-->
         <scene sceneID="WEf-Pd-z6Q">
             <objects>
-                <viewController id="iEn-fU-dGo" userLabel="Main_Controller" customClass="Main_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="main_MVC" id="iEn-fU-dGo" userLabel="Main_Controller" customClass="Main_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiG-hk-cPn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -361,10 +361,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-TJ-Ogt">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-1r-6Qz" userLabel="Color_Collection_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="206" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="186.5" height="41"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="0MG-em-5lr">
                                             <size key="itemSize" width="32" height="32"/>
@@ -405,10 +405,10 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lM-pa-H6Z">
-                                        <rect key="frame" x="208" y="0.0" width="206" height="41"/>
+                                        <rect key="frame" x="188.5" y="0.0" width="186.5" height="41"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-WE-JQy">
-                                                <rect key="frame" x="19" y="7" width="189" height="28"/>
+                                                <rect key="frame" x="19" y="7" width="169.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="ya0-2O-Sug"/>
                                                 </constraints>
@@ -464,7 +464,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-h7-bKC">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="wta-Gt-eVP">
                                     <size key="itemSize" width="30" height="30"/>
@@ -593,7 +593,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-5N-iuY" userLabel="Drop Zone">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="584"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-mS-c7B">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>

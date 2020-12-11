@@ -64,7 +64,7 @@ class ImageBuffer {
             }
             
             let pointX = index % imageWidth
-            var y = index / imageWidth
+            let y = index / imageWidth
             var minX = pointX
             var maxX = pointX + 1
             

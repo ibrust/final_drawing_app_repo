@@ -9,13 +9,16 @@ import UIKit
 
 class Document: UIDocument {
     
+    var current_file: File_Model?
+    
     override func contents(forType typeName: String) throws -> Any {
-        // Encode your document with an instance of NSData or NSFileWrapper
-        return Data()
+        return current_file?.json ?? Data()
     }
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
-        // Load your document from contents
+        if let json = contents as? Data {
+            current_file = File_Model(json: json)
+        }
     }
 }
 

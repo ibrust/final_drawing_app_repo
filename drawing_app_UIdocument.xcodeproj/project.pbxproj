@@ -190,10 +190,10 @@
 				3A4D17D62581F390003DF737 /* DrawingModes.swift */,
 				3A4D17D52581F390003DF737 /* Emojis.swift */,
 				3A4D17D72581F390003DF737 /* FileModel.swift */,
-				3A4D178B2581F27F003DF737 /* Document.swift */,
-				3A4D17D92581F390003DF737 /* Fill Tool */,
 				3A4D17D82581F390003DF737 /* Renderer.swift */,
 				3A4D17DD2581F391003DF737 /* StrokeOptions.swift */,
+				3A4D178B2581F27F003DF737 /* Document.swift */,
+				3A4D17D92581F390003DF737 /* Fill Tool */,
 			);
 			path = models;
 			sourceTree = "<group>";

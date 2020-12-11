@@ -67,7 +67,11 @@ struct Pixel {
     }
     
     static func componentDiff(_ l: UInt8, _ r: UInt8) -> UInt8 {
-        return max(l, r) - min(l, r)
+        if l > r {
+            return l - r
+        } else {
+            return r - l
+        }
     }
     
     func multiplyAlpha(_ alpha: CGFloat) -> Pixel {
