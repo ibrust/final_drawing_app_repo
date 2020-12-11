@@ -36,7 +36,8 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     // MARK: UIDocumentBrowserViewControllerDelegate
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        importHandler(template, .copy)      // copies the template out of application support into the documents directory
+        
+        importHandler(template, .copy)      // for creating a new document, copies the template out of application support into the documents directory
     }
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
@@ -61,11 +62,11 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     func presentDocument(at documentURL: URL) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let main_mvc = storyBoard.instantiateViewController(identifier: "main_MVC") as? Main_Controller
+        
         if let main_mvc = main_mvc {
             main_mvc.document = Document(fileURL: documentURL)
             present(main_mvc, animated: true)
         }
-        
     }
 }
 

@@ -29,10 +29,6 @@ class Utility_Controller: UIViewController {
         document?.close()
     }
     
-    @IBAction func new_file_button_handler(_ sender: UIButton) {
-    
-    }
-    
     @IBAction func coloring_book_button_handler(_ sender: UIButton) {
     
     }

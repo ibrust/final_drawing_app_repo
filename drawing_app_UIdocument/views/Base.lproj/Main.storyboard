@@ -287,32 +287,16 @@
                                 <rect key="frame" x="46" y="0.0" width="46" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7XE-mt-kI8" secondAttribute="height" multiplier="46:41" id="0ms-77-V4K"/>
-                                    <constraint firstAttribute="width" secondItem="7XE-mt-kI8" secondAttribute="height" multiplier="46:41" id="gOW-QK-wxH"/>
                                 </constraints>
                                 <state key="normal" image="folder.fill" catalog="system"/>
                                 <connections>
                                     <action selector="open_button_handler:" destination="Wxy-M1-pgo" eventType="touchUpInside" id="oQy-RO-LCX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-mC-ZsJ" userLabel="New">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-tR-12n" userLabel="Coloring_Book">
                                 <rect key="frame" x="92" y="0.0" width="46" height="41"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="BdY-rz-5Bq"/>
-                                    <constraint firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="O5z-NN-1ia"/>
-                                    <constraint firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="i7a-6J-X2q"/>
-                                </constraints>
-                                <state key="normal" image="square.and.pencil" catalog="system"/>
-                                <connections>
-                                    <action selector="new_file_button_handler:" destination="Wxy-M1-pgo" eventType="touchUpInside" id="eTu-Hx-gKM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZx-tR-12n" userLabel="Coloring_Book">
-                                <rect key="frame" x="138" y="0.0" width="46" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="Z60-bO-bR1"/>
-                                    <constraint firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="fin-ET-dBr"/>
-                                    <constraint firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="gZO-cO-6Ja"/>
-                                    <constraint firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="rAk-zc-slv"/>
+                                    <constraint firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="RDX-Qn-Ynt"/>
                                 </constraints>
                                 <state key="normal" image="book" catalog="system"/>
                                 <connections>
@@ -324,27 +308,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DKa-al-vK2" firstAttribute="leading" secondItem="h4d-Jw-IeW" secondAttribute="leading" id="04C-u2-tyk"/>
-                            <constraint firstItem="XeD-mC-ZsJ" firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="3et-6x-iL3"/>
-                            <constraint firstItem="7XE-mt-kI8" firstAttribute="width" secondItem="7XE-mt-kI8" secondAttribute="height" multiplier="46:41" id="8gH-eJ-Qv2"/>
-                            <constraint firstItem="XeD-mC-ZsJ" firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="9jW-9W-mLW"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="FFz-wO-uPe"/>
                             <constraint firstItem="DKa-al-vK2" firstAttribute="top" secondItem="h4d-Jw-IeW" secondAttribute="top" id="GEC-Sd-bDQ"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="KRo-u9-gKc"/>
                             <constraint firstItem="sZx-tR-12n" firstAttribute="top" secondItem="h4d-Jw-IeW" secondAttribute="top" id="Llk-qy-Qje"/>
                             <constraint firstItem="2m5-1N-Pu1" firstAttribute="bottom" secondItem="DKa-al-vK2" secondAttribute="bottom" id="Lqk-80-9gf"/>
-                            <constraint firstItem="2m5-1N-Pu1" firstAttribute="bottom" secondItem="XeD-mC-ZsJ" secondAttribute="bottom" id="MJj-vx-1fr"/>
                             <constraint firstItem="7XE-mt-kI8" firstAttribute="leading" secondItem="DKa-al-vK2" secondAttribute="trailing" id="S67-VR-Bb8"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="leading" secondItem="XeD-mC-ZsJ" secondAttribute="trailing" id="VVQ-K4-PxE"/>
-                            <constraint firstItem="XeD-mC-ZsJ" firstAttribute="width" secondItem="XeD-mC-ZsJ" secondAttribute="height" multiplier="46:41" id="ZDu-W3-8L5"/>
                             <constraint firstItem="2m5-1N-Pu1" firstAttribute="bottom" secondItem="7XE-mt-kI8" secondAttribute="bottom" id="bsB-GR-z2G"/>
-                            <constraint firstItem="XeD-mC-ZsJ" firstAttribute="top" secondItem="h4d-Jw-IeW" secondAttribute="top" id="bsc-iL-HpS"/>
                             <constraint firstItem="7XE-mt-kI8" firstAttribute="top" secondItem="h4d-Jw-IeW" secondAttribute="top" id="cm5-oo-2SD"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="eFt-lq-Kdz"/>
-                            <constraint firstItem="XeD-mC-ZsJ" firstAttribute="leading" secondItem="7XE-mt-kI8" secondAttribute="trailing" id="gfm-bI-R4f"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="sNZ-C5-dbM"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="tcN-fE-F8J"/>
+                            <constraint firstItem="sZx-tR-12n" firstAttribute="leading" secondItem="7XE-mt-kI8" secondAttribute="trailing" id="t0B-kH-VYq"/>
                             <constraint firstItem="2m5-1N-Pu1" firstAttribute="bottom" secondItem="sZx-tR-12n" secondAttribute="bottom" id="v2Z-4m-of5"/>
-                            <constraint firstItem="sZx-tR-12n" firstAttribute="width" secondItem="sZx-tR-12n" secondAttribute="height" multiplier="46:41" id="yef-9t-MR9"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -653,7 +624,6 @@
         <image name="pencil" width="100" height="100"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="scribble.variable" catalog="system" width="128" height="118"/>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
