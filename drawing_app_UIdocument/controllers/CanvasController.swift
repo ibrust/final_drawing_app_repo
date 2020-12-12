@@ -189,6 +189,7 @@ extension Canvas_Controller {
             self.paths.draw_quadratic_line(to: new_point)
             Custom_Renderer.shared.redraw_surrounding_area(paths, stroke_options.width, canvas_view_outlet)
         }
+        
         else if drawing_mode == .polyline || drawing_mode == .line {
             self.paths.draw_temporary_line(to: new_point)
             Custom_Renderer.shared.redraw_full_screen(canvas_view_outlet)
@@ -271,7 +272,9 @@ extension Canvas_Controller {
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         image_fetcher = ImageFetcher() { [weak self] (url, image) in
             DispatchQueue.main.async {
-                guard let self = self else {return} 
+                guard let self = self else {return}
+                self.canvas_view_outlet.subviews.compactMap {
+                    $0 as? UILabel }.forEach { $0.removeFromSuperview() }
                 self.background_image = image
             }
         }
