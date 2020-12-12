@@ -67,8 +67,10 @@ class Main_Controller: UIViewController {
                 } else if let child = child as? Utility_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
                     child.main_controller_reference = self
-                    child.document = self.document
-                    child.load_document()
+                    if document?.documentState != .normal {
+                        child.document = self.document
+                        child.load_document()
+                    }
                 }
             }
         }

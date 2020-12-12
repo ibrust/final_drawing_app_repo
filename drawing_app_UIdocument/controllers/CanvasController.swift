@@ -13,6 +13,17 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
     var image_fetcher: ImageFetcher!
     var paths: Bezier_Paths = Bezier_Paths()
     
+    var stroke_options: Stroke_Options = Stroke_Options()
+    var is_fill: Bool = false
+    var polyline_set = false
+    
+    var canvas_view_outlet: Canvas_View! = Canvas_View()
+    var image_view: UIImageView! = UIImageView()
+    var regular_view: UIView! = UIView()
+    
+    @IBOutlet weak var scroll_view_width: NSLayoutConstraint!
+    @IBOutlet weak var scroll_view_height: NSLayoutConstraint!
+    
     var current_file: File_Model {
         get {
             var file_obj: File_Model
@@ -61,14 +72,11 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
             }
         }
     }
-    var stroke_options: Stroke_Options = Stroke_Options()
-    var is_fill: Bool = false
-    var polyline_set = false
     
     @IBOutlet weak var drop_zone_outlet: UIView! {
         didSet {
             drop_zone_outlet.addInteraction(UIDropInteraction(delegate: self))
-            drop_zone_outlet.backgroundColor = UIColor.black // #colorLiteral(red: 0.8549019608, green: 0.4117647059, blue: 0.05490196078, alpha: 1)
+            drop_zone_outlet.backgroundColor = UIColor.black
         }
     }
 
@@ -79,16 +87,9 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
             scroll_view_outlet.maximumZoomScale = 5.0
             scroll_view_outlet.delegate = self
             scroll_view_outlet.addSubview(canvas_view_outlet)
-            scroll_view_outlet.backgroundColor = UIColor.black // #colorLiteral(red: 0.8549019608, green: 0.4117647059, blue: 0.05490196078, alpha: 1)
+            scroll_view_outlet.backgroundColor = UIColor.black
         }
     }
-
-    @IBOutlet weak var scroll_view_width: NSLayoutConstraint!
-    @IBOutlet weak var scroll_view_height: NSLayoutConstraint!
-    
-    var canvas_view_outlet: Canvas_View! = Canvas_View()
-    var image_view: UIImageView! = UIImageView()
-    var regular_view: UIView! = UIView()
     
     var background_image: UIImage? {
         get {
@@ -132,52 +133,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
         super.viewDidLoad()
         self.main_controller_reference?.canvas_controller_reference = self
         self.canvas_view_outlet.delegate = self
-        
-        self.background_image = UIImage(named: "Oranges")
-        
-        var stroke_options = Stroke_Options()
-        stroke_options.color = UIColor.yellow
-        self.paths.predicted_path = Custom_Bezier_Path(stroke_options, drawing_mode, is_fill)
-    }
-    
-    func merge_imageview_and_canvas() -> UIImage? {
-        
-        self.paths.canvas_bounds = regular_view.bounds
-        
-        let canvas_image = canvas_view_outlet.asImage()
-        let new_size = canvas_view_outlet.frame.size
-        
-        UIGraphicsBeginImageContextWithOptions(new_size, false, 0.0)
-
-        background_image?.draw(in: CGRect(origin: CGPoint.zero, size: new_size))
-        canvas_image.draw(in: CGRect(origin: CGPoint.zero, size: new_size))
-        
-        guard let view_image = UIGraphicsGetImageFromCurrentImageContext() else {return nil}
-        UIGraphicsEndImageContext()
-        return view_image
-    }
-    
-    func create_image_from_paths(paths: [Custom_Bezier_Path]) -> UIImage? {
-        let new_size = canvas_view_outlet.frame.size
-        UIGraphicsBeginImageContextWithOptions(new_size, false, 0.0)
-        
-        guard let context = UIGraphicsGetCurrentContext() else {return nil}
-        context.setStrokeColor(UIColor.green.cgColor)
-        
-        for path in paths {
-            path.stroke()
-        }
-        let new_image = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return new_image
-    }
-    
-    func replace_paths_with_background_image(background_image: UIImage, paths_image: UIImage) -> UIImage? {
-        
-        
-        
-        return nil
+        self.paths.predicted_path = Custom_Bezier_Path(self.stroke_options, drawing_mode, is_fill)
     }
     
 }
@@ -212,8 +168,10 @@ extension Canvas_Controller {
                 return
             }
         }
-        self.paths.add_bezier_path(new_bezier_path)
-        self.paths.move(to: starting_point)
+        if drawing_mode != .move {
+            self.paths.add_bezier_path(new_bezier_path)
+            self.paths.move(to: starting_point)
+        }
     }
     
     func mid_touch(touches: Set<UITouch>, event: UIEvent?) {
@@ -263,8 +221,42 @@ extension Canvas_Controller {
         self.canvas_view_outlet?.setNeedsDisplay()
         polyline_set = false
     }
+    
     func reset_background_image(){
         self.canvas_view_outlet.background_image = self.image_view.image
+    }
+    
+    func merge_imageview_and_canvas() -> UIImage? {
+        
+        self.paths.canvas_bounds = regular_view.bounds
+        
+        let canvas_image = canvas_view_outlet.asImage()
+        let new_size = canvas_view_outlet.frame.size
+        
+        UIGraphicsBeginImageContextWithOptions(new_size, false, 0.0)
+
+        background_image?.draw(in: CGRect(origin: CGPoint.zero, size: new_size))
+        canvas_image.draw(in: CGRect(origin: CGPoint.zero, size: new_size))
+        
+        guard let view_image = UIGraphicsGetImageFromCurrentImageContext() else {return nil}
+        UIGraphicsEndImageContext()
+        return view_image
+    }
+    
+    func create_image_from_paths(paths: [Custom_Bezier_Path]) -> UIImage? {
+        let new_size = canvas_view_outlet.frame.size
+        UIGraphicsBeginImageContextWithOptions(new_size, false, 0.0)
+        
+        guard let context = UIGraphicsGetCurrentContext() else {return nil}
+        context.setStrokeColor(UIColor.green.cgColor)
+        
+        for path in paths {
+            path.stroke()
+        }
+        let new_image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return new_image
     }
 }
 

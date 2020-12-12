@@ -45,11 +45,8 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
     override func draw(_ rect: CGRect){
         super.draw(rect)
         background_image?.draw(in: bounds)
-        
         delegate?.draw_paths(latest_rect)
-        
-        Custom_Renderer.shared.redraw_path = nil 
-        
+        Custom_Renderer.shared.redraw_path = nil
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -70,12 +67,15 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
 
 // functions for dragging emojis / text onto canvas
 extension Canvas_View {
+    
     func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
         return session.canLoadObjects(ofClass: NSAttributedString.self)
     }
+    
     func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
         return UIDropProposal(operation: .copy)
     }
+    
     func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
         session.loadObjects(ofClass: NSAttributedString.self) { providers in
             let drop_point = session.location(in: self)
@@ -84,6 +84,7 @@ extension Canvas_View {
             }
         }
     }
+    
     func add_label(with attributed_string: NSAttributedString, centered_at point: CGPoint) {
         let label = UILabel()
         label.backgroundColor = .clear
@@ -96,13 +97,24 @@ extension Canvas_View {
 }
 
 
-// Gesture Recognition Extension
+// gesture recognizers for canvas / emoji labels
 extension Canvas_View
 {
     func add_gesture_recognizers(to view: UIView) {
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.selectSubview(by:))))
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(self.selectAndMoveSubview(by:))))
+    }
+    
+    @objc func selectSubview(by recognizer: UITapGestureRecognizer) {
+        if recognizer.state == .ended {
+            selectedSubview = recognizer.view
+            // send the UILabel to the back of the subview stack - used to handle overlapping label issues
+            if let view = recognizer.view, let index = subviews.firstIndex(of: view) {
+                selectedSubview = view
+                exchangeSubview(at: 0, withSubviewAt: index)
+            }
+        }
     }
 
     var selectedSubview: UIView? {
@@ -115,12 +127,6 @@ extension Canvas_View
             } else {
                 disableRecognizers()
             }
-        }
-    }
-
-    @objc func selectSubview(by recognizer: UITapGestureRecognizer) {
-        if recognizer.state == .ended {
-            selectedSubview = recognizer.view
         }
     }
     
@@ -140,14 +146,16 @@ extension Canvas_View
         }
     }
     
+    // unlike add_gesture_recognizers which adds gestures to the new emoji UILabel,
+    // this manages the recognizers on the canvas view & scroll view
     func enableRecognizers() {
         if let scrollView = superview as? UIScrollView {
-            // if we are in a scroll view, disable its recognizers
-            // so that ours will get the touch events instead
+            // if we're in a scroll view, disable its recognizers so that we'll get the touch events instead
             scrollView.panGestureRecognizer.isEnabled = false
             scrollView.pinchGestureRecognizer?.isEnabled = false
         }
         if gestureRecognizers == nil || gestureRecognizers!.count == 0 {
+            // if the tap gesture isn't handled by the label, it'll be handled by the canvas view
             addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.deselectSubview)))
             addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(self.resizeSelectedLabel(by:))))
         } else {
@@ -180,16 +188,7 @@ extension Canvas_View
             break
         }
     }
-    /*
-    @objc func selectAndSendSubviewToBack(by recognizer: UITapGestureRecognizer) {
-        if recognizer.state == .ended {
-            if let view = recognizer.view, let index = subviews.index(of: view) {
-                selectedSubview = view
-                exchangeSubview(at: 0, withSubviewAt: index)
-                delegate?.emojiArtViewDidChange(self)
-            }
-        }
-    }*/
+    
 }
 
 

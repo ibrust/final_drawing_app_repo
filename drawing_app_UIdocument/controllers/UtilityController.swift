@@ -6,13 +6,20 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class Utility_Controller: UIViewController {
+class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var main_controller_reference: Main_Controller? = nil
     var canvas_controller_reference: Canvas_Controller? = nil 
     
     var document: Document?
+    
+    @IBOutlet weak var camera_outlet: UIButton! {
+        didSet {
+            camera_outlet.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        }
+    }
     
     @IBAction func save_button_handler(_ sender: UIButton? = nil) {
         document?.current_file = canvas_controller_reference?.current_file
@@ -29,7 +36,29 @@ class Utility_Controller: UIViewController {
     }
     
     @IBAction func coloring_book_button_handler(_ sender: UIButton) {
+        
+    }
     
+    @IBAction func camera_button_handler(_ sender: UIButton) {
+        let camera_picker = UIImagePickerController()
+        camera_picker.sourceType = .camera
+        camera_picker.mediaTypes = [kUTTypeImage as String]
+        camera_picker.allowsEditing = true
+        camera_picker.delegate = self
+        present(camera_picker, animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.presentingViewController?.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.presentingViewController?.dismiss(animated: true)
+        
+        if let image = ((info[UIImagePickerController.InfoKey.editedImage] ?? info[UIImagePickerController.InfoKey.originalImage]) as? UIImage) {
+            canvas_controller_reference?.background_image = image
+        }
     }
     
     func load_document() {
