@@ -33,100 +33,123 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-eU-cIW">
-                                <rect key="frame" x="0.0" y="629" width="375" height="38"/>
-                                <color key="backgroundColor" red="0.01660985119" green="0.077378485750000003" blue="0.55026570429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="mFd-gl-t6O"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="draw" id="gj5-ol-kRD">
-                                        <imageReference key="image" image="scribble.variable" catalog="system" symbolScale="medium"/>
-                                        <connections>
-                                            <action selector="toolbar_draw_button_press:" destination="iEn-fU-dGo" id="pCf-yE-2GO"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3zJ-FB-XRi"/>
-                                    <barButtonItem title="coloring" id="WsP-ae-Ggp" userLabel="Toolbar color button">
-                                        <imageReference key="image" image="paintpalette.fill" catalog="system" symbolScale="medium"/>
-                                        <connections>
-                                            <action selector="toolbar_color_button_press:" destination="iEn-fU-dGo" id="gtP-vO-VJU"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6ct-DV-S77"/>
-                                    <barButtonItem title="stickers" id="1qb-nC-i4A" userLabel="Toolbar emojis button">
-                                        <imageReference key="image" image="face.smiling.fill" catalog="system" symbolScale="medium"/>
-                                        <connections>
-                                            <action selector="toolbar_emojis_button_press:" destination="iEn-fU-dGo" id="Fqv-4e-o6g"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="3Yf-ZY-xDT"/>
-                                    <barButtonItem title="utilities" id="Ile-Gc-Whz">
-                                        <imageReference key="image" image="hammer.fill" catalog="system" symbolScale="medium"/>
-                                        <connections>
-                                            <action selector="toolbar_utilities_button_press:" destination="iEn-fU-dGo" id="hPO-4B-Xeh"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" systemColor="systemIndigoColor"/>
-                            </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-Gp-Ilv" userLabel="Multiple Containers">
-                                <rect key="frame" x="0.0" y="584" width="375" height="45"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InH-dC-ScC" customClass="Buttons_Wrapper" customModule="drawing_app_UIdocument" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="584" width="375" height="83"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-8C-daI" userLabel="Border">
-                                        <rect key="frame" x="0.0" y="41" width="375" height="4"/>
-                                        <color key="backgroundColor" red="0.95486992390000003" green="0.90980865749999995" blue="0.74765571600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-eU-cIW">
+                                        <rect key="frame" x="0.0" y="45" width="375" height="38"/>
+                                        <color key="backgroundColor" red="0.01660985119" green="0.077378485750000003" blue="0.55026570429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="4" id="RI5-Jl-KWd"/>
+                                            <constraint firstAttribute="height" constant="38" id="mFd-gl-t6O"/>
+                                        </constraints>
+                                        <items>
+                                            <barButtonItem title="draw" id="gj5-ol-kRD">
+                                                <imageReference key="image" image="scribble.variable" catalog="system" symbolScale="medium"/>
+                                                <connections>
+                                                    <action selector="toolbar_draw_button_press:" destination="iEn-fU-dGo" id="pCf-yE-2GO"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="3zJ-FB-XRi"/>
+                                            <barButtonItem title="coloring" id="WsP-ae-Ggp" userLabel="Toolbar color button">
+                                                <imageReference key="image" image="paintpalette.fill" catalog="system" symbolScale="medium"/>
+                                                <connections>
+                                                    <action selector="toolbar_color_button_press:" destination="iEn-fU-dGo" id="gtP-vO-VJU"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="6ct-DV-S77"/>
+                                            <barButtonItem title="stickers" id="1qb-nC-i4A" userLabel="Toolbar emojis button">
+                                                <imageReference key="image" image="face.smiling.fill" catalog="system" symbolScale="medium"/>
+                                                <connections>
+                                                    <action selector="toolbar_emojis_button_press:" destination="iEn-fU-dGo" id="Fqv-4e-o6g"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="3Yf-ZY-xDT"/>
+                                            <barButtonItem title="utilities" id="Ile-Gc-Whz">
+                                                <imageReference key="image" image="hammer.fill" catalog="system" symbolScale="medium"/>
+                                                <connections>
+                                                    <action selector="toolbar_utilities_button_press:" destination="iEn-fU-dGo" id="hPO-4B-Xeh"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                        <color key="tintColor" systemColor="systemIndigoColor"/>
+                                    </toolbar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-Gp-Ilv" userLabel="Multiple Containers">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="45"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-8C-daI" userLabel="Border">
+                                                <rect key="frame" x="0.0" y="41" width="375" height="4"/>
+                                                <color key="backgroundColor" red="0.95486992390000003" green="0.90980865749999995" blue="0.74765571600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="4" id="RI5-Jl-KWd"/>
+                                                </constraints>
+                                            </view>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAd-Jc-bNv" userLabel="Draw_Container_View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="DQQ-Rm-BW6"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="1OB-H9-mwc" kind="embed" id="LdC-H9-whl"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-WW-c8C" userLabel="Utilities_Container_View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="HPy-AQ-j2w"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="Wxy-M1-pgo" kind="embed" id="M1R-lN-2J7"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qst-w8-6mP" userLabel="Color_Container_View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="ATq-4i-6CA"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="Hdn-R6-lq7" kind="embed" id="cfj-Lp-B1q"/>
+                                                </connections>
+                                            </containerView>
+                                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-SY-ucQ" userLabel="Emojis_Container_View">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="ANr-u3-WVM"/>
+                                                </constraints>
+                                                <connections>
+                                                    <segue destination="4Il-4H-kUk" kind="embed" id="hKM-1L-MQi"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.69186246129999995" green="0.94927823600000005" blue="0.70076047029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="A2o-8C-daI" secondAttribute="trailing" id="1Bh-A9-pWP"/>
+                                            <constraint firstItem="dAd-Jc-bNv" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="60J-in-6xA"/>
+                                            <constraint firstAttribute="trailing" secondItem="dAd-Jc-bNv" secondAttribute="trailing" id="AFJ-uI-rp4"/>
+                                            <constraint firstItem="qst-w8-6mP" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="Agb-Vy-SqY"/>
+                                            <constraint firstAttribute="bottom" secondItem="A2o-8C-daI" secondAttribute="bottom" id="ETX-sk-e15"/>
+                                            <constraint firstAttribute="trailing" secondItem="qst-w8-6mP" secondAttribute="trailing" id="GEG-jU-rDv"/>
+                                            <constraint firstItem="Eth-WW-c8C" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="Lnz-tn-Ne4"/>
+                                            <constraint firstAttribute="trailing" secondItem="Eth-WW-c8C" secondAttribute="trailing" id="LwU-ru-jmZ"/>
+                                            <constraint firstItem="Eth-WW-c8C" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="Psa-eZ-pTK"/>
+                                            <constraint firstItem="dAd-Jc-bNv" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="VQG-t0-Fna"/>
+                                            <constraint firstItem="A2o-8C-daI" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="eQo-rl-Nd3"/>
+                                            <constraint firstItem="kZt-SY-ucQ" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="hHj-hA-GyW"/>
+                                            <constraint firstAttribute="height" constant="45" id="i5L-HA-2tw"/>
+                                            <constraint firstItem="kZt-SY-ucQ" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="ksB-Wy-7KG"/>
+                                            <constraint firstAttribute="trailing" secondItem="kZt-SY-ucQ" secondAttribute="trailing" id="nNw-Bk-zeI"/>
+                                            <constraint firstItem="qst-w8-6mP" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="oC6-xy-Xsq"/>
                                         </constraints>
                                     </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAd-Jc-bNv" userLabel="Draw_Container_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
-                                        <connections>
-                                            <segue destination="1OB-H9-mwc" kind="embed" id="LdC-H9-whl"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-WW-c8C" userLabel="Utilities_Container_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
-                                        <connections>
-                                            <segue destination="Wxy-M1-pgo" kind="embed" id="M1R-lN-2J7"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qst-w8-6mP" userLabel="Color_Container_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
-                                        <connections>
-                                            <segue destination="Hdn-R6-lq7" kind="embed" id="cfj-Lp-B1q"/>
-                                        </connections>
-                                    </containerView>
-                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-SY-ucQ" userLabel="Emojis_Container_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
-                                        <connections>
-                                            <segue destination="4Il-4H-kUk" kind="embed" id="hKM-1L-MQi"/>
-                                        </connections>
-                                    </containerView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.69186246129999995" green="0.94927823600000005" blue="0.70076047029999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <constraints>
-                                    <constraint firstItem="qst-w8-6mP" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="4Ce-dR-sOp"/>
-                                    <constraint firstItem="dAd-Jc-bNv" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="5J1-nm-7a3"/>
-                                    <constraint firstAttribute="trailing" secondItem="A2o-8C-daI" secondAttribute="trailing" id="5di-Fd-McL"/>
-                                    <constraint firstAttribute="bottom" secondItem="A2o-8C-daI" secondAttribute="bottom" id="7Z0-fG-eRH"/>
-                                    <constraint firstAttribute="trailing" secondItem="dAd-Jc-bNv" secondAttribute="trailing" id="Itm-GL-jPU"/>
-                                    <constraint firstItem="Eth-WW-c8C" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="Nsd-fM-oNY"/>
-                                    <constraint firstItem="A2o-8C-daI" firstAttribute="top" secondItem="Eth-WW-c8C" secondAttribute="bottom" id="RRk-Nl-P74"/>
-                                    <constraint firstAttribute="trailing" secondItem="Eth-WW-c8C" secondAttribute="trailing" id="SSK-6Y-aBQ"/>
-                                    <constraint firstItem="qst-w8-6mP" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="UUd-xv-Jvo"/>
-                                    <constraint firstItem="A2o-8C-daI" firstAttribute="top" secondItem="dAd-Jc-bNv" secondAttribute="bottom" id="VhM-5E-LLO"/>
-                                    <constraint firstItem="Eth-WW-c8C" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="Y1Q-Un-5na"/>
-                                    <constraint firstItem="kZt-SY-ucQ" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="top" id="aSL-8P-ncf"/>
-                                    <constraint firstItem="A2o-8C-daI" firstAttribute="top" secondItem="qst-w8-6mP" secondAttribute="bottom" id="d9P-oO-tWW"/>
-                                    <constraint firstItem="A2o-8C-daI" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="ghe-Ct-CHa"/>
-                                    <constraint firstAttribute="height" constant="45" id="i5L-HA-2tw"/>
-                                    <constraint firstItem="A2o-8C-daI" firstAttribute="top" secondItem="kZt-SY-ucQ" secondAttribute="bottom" id="oWh-eU-dZV"/>
-                                    <constraint firstItem="kZt-SY-ucQ" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="oYm-Ht-Ojb"/>
-                                    <constraint firstItem="dAd-Jc-bNv" firstAttribute="leading" secondItem="YGg-Gp-Ilv" secondAttribute="leading" id="rpY-19-bnM"/>
-                                    <constraint firstAttribute="trailing" secondItem="kZt-SY-ucQ" secondAttribute="trailing" id="tkt-3T-zoa"/>
-                                    <constraint firstAttribute="trailing" secondItem="qst-w8-6mP" secondAttribute="trailing" id="z4w-Fb-PwP"/>
+                                    <constraint firstItem="Xjp-eU-cIW" firstAttribute="leading" secondItem="InH-dC-ScC" secondAttribute="leading" id="5u7-Sc-jDP"/>
+                                    <constraint firstAttribute="height" constant="83" id="9o0-aR-dBO"/>
+                                    <constraint firstAttribute="trailing" secondItem="YGg-Gp-Ilv" secondAttribute="trailing" id="QOy-Ii-F5y"/>
+                                    <constraint firstItem="Xjp-eU-cIW" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="bottom" id="TvA-8r-K6F"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xjp-eU-cIW" secondAttribute="trailing" id="a3e-BK-Sgs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xjp-eU-cIW" secondAttribute="bottom" id="mZz-uB-lU2"/>
+                                    <constraint firstItem="YGg-Gp-Ilv" firstAttribute="leading" secondItem="InH-dC-ScC" secondAttribute="leading" id="tQt-uD-8mI"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-MK-8hh">
@@ -139,16 +162,13 @@
                         <viewLayoutGuide key="safeArea" id="Veb-SA-32O"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="9X2-MK-8hh" firstAttribute="trailing" secondItem="Veb-SA-32O" secondAttribute="trailing" id="5I7-bu-Fn9"/>
-                            <constraint firstItem="Xjp-eU-cIW" firstAttribute="leading" secondItem="Veb-SA-32O" secondAttribute="leading" id="Dn0-HL-CGy"/>
-                            <constraint firstItem="Xjp-eU-cIW" firstAttribute="top" secondItem="YGg-Gp-Ilv" secondAttribute="bottom" id="LLI-2R-UnJ"/>
-                            <constraint firstItem="YGg-Gp-Ilv" firstAttribute="top" secondItem="9X2-MK-8hh" secondAttribute="bottom" id="UOT-ON-Fc9"/>
-                            <constraint firstItem="Xjp-eU-cIW" firstAttribute="bottom" secondItem="Veb-SA-32O" secondAttribute="bottom" id="hm3-2p-p6O"/>
-                            <constraint firstItem="YGg-Gp-Ilv" firstAttribute="leading" secondItem="Veb-SA-32O" secondAttribute="leading" id="jbJ-5n-iY5"/>
-                            <constraint firstItem="9X2-MK-8hh" firstAttribute="leading" secondItem="Veb-SA-32O" secondAttribute="leading" id="qlt-hV-Ob4"/>
-                            <constraint firstItem="9X2-MK-8hh" firstAttribute="top" secondItem="Veb-SA-32O" secondAttribute="top" id="rVJ-6W-xI8"/>
-                            <constraint firstItem="YGg-Gp-Ilv" firstAttribute="trailing" secondItem="Veb-SA-32O" secondAttribute="trailing" id="z57-St-kah"/>
-                            <constraint firstItem="Xjp-eU-cIW" firstAttribute="trailing" secondItem="Veb-SA-32O" secondAttribute="trailing" id="zWd-XV-vxk"/>
+                            <constraint firstItem="InH-dC-ScC" firstAttribute="bottom" secondItem="Veb-SA-32O" secondAttribute="bottom" id="PF5-sg-dBI"/>
+                            <constraint firstItem="InH-dC-ScC" firstAttribute="top" secondItem="9X2-MK-8hh" secondAttribute="bottom" id="cnG-Nc-MSn"/>
+                            <constraint firstItem="9X2-MK-8hh" firstAttribute="leading" secondItem="Veb-SA-32O" secondAttribute="leading" id="id8-Nd-jML"/>
+                            <constraint firstItem="9X2-MK-8hh" firstAttribute="top" secondItem="Veb-SA-32O" secondAttribute="top" id="sEc-9a-66m"/>
+                            <constraint firstItem="9X2-MK-8hh" firstAttribute="trailing" secondItem="Veb-SA-32O" secondAttribute="trailing" id="yD2-os-LxI"/>
+                            <constraint firstItem="InH-dC-ScC" firstAttribute="trailing" secondItem="Veb-SA-32O" secondAttribute="trailing" id="z4B-Ks-N0U"/>
+                            <constraint firstItem="InH-dC-ScC" firstAttribute="leading" secondItem="Veb-SA-32O" secondAttribute="leading" id="zqW-jH-e39"/>
                         </constraints>
                     </view>
                     <connections>
@@ -156,6 +176,7 @@
                         <outlet property="Draw_Container" destination="dAd-Jc-bNv" id="uWN-Og-0JK"/>
                         <outlet property="Emojis_Container" destination="kZt-SY-ucQ" id="sFe-Cd-e1i"/>
                         <outlet property="Utilities_Container" destination="Eth-WW-c8C" id="HpD-V1-oZZ"/>
+                        <outlet property="buttons_wrapper_outlet" destination="InH-dC-ScC" id="2yn-Pi-wc7"/>
                         <outlet property="toolbar_color_button" destination="WsP-ae-Ggp" id="heg-DO-wd0"/>
                         <outlet property="toolbar_draw_button" destination="gj5-ol-kRD" id="vfd-iu-sWM"/>
                         <outlet property="toolbar_emojis_button" destination="1qb-nC-i4A" id="GQp-VA-KuR"/>
@@ -164,7 +185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y56-7M-bLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1497" y="-218"/>
+            <point key="canvasLocation" x="-1498.4000000000001" y="-218.1409295352324"/>
         </scene>
         <!--Draw_Controller-->
         <scene sceneID="ruT-7M-sKK">

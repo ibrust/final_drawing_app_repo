@@ -231,6 +231,10 @@ extension Canvas_Controller {
         self.canvas_view_outlet.background_image = self.image_view.image
     }
     
+    func refresh_background_image(){
+        self.background_image = merge_imageview_and_canvas() 
+    }
+    
     func merge_imageview_and_canvas() -> UIImage? {
         
         self.paths.canvas_bounds = regular_view.bounds
@@ -263,6 +267,11 @@ extension Canvas_Controller {
         
         return new_image
     }
+    
+    func draw_and_remove_emojis(){
+        self.canvas_view_outlet.draw_and_remove_emojis()
+    }
+    
 }
 
 // drag and drop functions 

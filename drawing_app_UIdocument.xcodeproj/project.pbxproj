@@ -37,6 +37,7 @@
 		3A4D17FA2581F3CF003DF737 /* TextInputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F52581F3CF003DF737 /* TextInputCell.swift */; };
 		3A4D17FB2581F3CF003DF737 /* AddEmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */; };
 		3A4D18002581F41A003DF737 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17FF2581F41A003DF737 /* Utilities.swift */; };
+		3A7A11592585A99500D1644D /* ButtonsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A11582585A99500D1644D /* ButtonsWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		3A4D17F52581F3CF003DF737 /* TextInputCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextInputCell.swift; sourceTree = "<group>"; };
 		3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmojiCell.swift; sourceTree = "<group>"; };
 		3A4D17FF2581F41A003DF737 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		3A7A11582585A99500D1644D /* ButtonsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				3A4D17F42581F3CF003DF737 /* EmojiCell.swift */,
 				3A4D178D2581F27F003DF737 /* Main.storyboard */,
 				3A4D17F52581F3CF003DF737 /* TextInputCell.swift */,
+				3A7A11582585A99500D1644D /* ButtonsWrapper.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				3A4D17C92581F369003DF737 /* MainController.swift in Sources */,
 				3A4D18002581F41A003DF737 /* Utilities.swift in Sources */,
 				3A4D17E22581F391003DF737 /* BezierPaths.swift in Sources */,
+				3A7A11592585A99500D1644D /* ButtonsWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

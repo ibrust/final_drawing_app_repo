@@ -12,7 +12,6 @@ class Main_Controller: UIViewController {
     var old_segmented_index: Int = 0
     var use_default_image = false
     
-    
     @IBAction func toolbar_draw_button_press(_ sender: UIBarButtonItem) {
         change_toolbar(Draw_Container)
     }
@@ -29,7 +28,7 @@ class Main_Controller: UIViewController {
     private func change_toolbar(_ container: UIView){
         // draw any emoji label added to the view & remove the label
         if Emojis_Container.isHidden == false {
-            
+            canvas_controller_reference?.draw_and_remove_emojis()
         }
         
         Draw_Container.isHidden = true
@@ -56,6 +55,8 @@ class Main_Controller: UIViewController {
     @IBOutlet weak var Color_Container: UIView!
     @IBOutlet weak var Emojis_Container: UIView!
     
+    @IBOutlet weak var buttons_wrapper_outlet: Buttons_Wrapper!
+    
     // toolbar button outlets
     @IBOutlet weak var toolbar_draw_button: UIBarButtonItem!
     @IBOutlet weak var toolbar_color_button: UIBarButtonItem!
@@ -70,6 +71,7 @@ class Main_Controller: UIViewController {
         case let canvas_controller as Canvas_Controller:
             canvas_controller.main_controller_reference = self
             self.canvas_controller_reference = canvas_controller
+            self.buttons_wrapper_outlet.canvas_controller_reference = canvas_controller
             self.addChild(canvas_controller)
         default:
             break

@@ -13,11 +13,14 @@ protocol Canvas_View_Delegate{
     func end_touch(touches: Set<UITouch>, event: UIEvent?)
     func draw_paths(_ rect: CGRect?)
     func clear_paths()
+    func refresh_background_image()
 }
 
 class Canvas_View: UIView, UIDropInteractionDelegate {
     
     var delegate: Canvas_View_Delegate? = nil
+    var draw_emojis = false
+    var needs_refresh = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,7 +39,9 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
     
     var background_image: UIImage? {
         didSet {
-            self.delegate?.clear_paths()
+            if needs_refresh == false {
+                self.delegate?.clear_paths()
+            }
         }
     }
     
@@ -44,9 +49,33 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
     
     override func draw(_ rect: CGRect){
         super.draw(rect)
-        background_image?.draw(in: bounds)
+        
+        if needs_refresh == true {
+            self.delegate?.refresh_background_image()
+            needs_refresh = false
+        }
+        
+        if draw_emojis == true {
+            draw_emojis = false
+            needs_refresh = true
+            selectedSubview = nil
+            
+            let emoji_labels_array = self.subviews.compactMap { $0 as? UILabel }
+            emoji_labels_array.forEach {
+                $0.drawText(in: $0.frame)
+                $0.removeFromSuperview()
+            }
+        }
+        else {
+            background_image?.draw(in: bounds)
+        }
         delegate?.draw_paths(latest_rect)
         Custom_Renderer.shared.redraw_path = nil
+    }
+    
+    func draw_and_remove_emojis(){
+        draw_emojis = true
+        setNeedsDisplay()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -116,7 +116,7 @@ class Emoji_Controller: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, dropSessionDidUpdate session: UIDropSession, withDestinationIndexPath destinationIndexPath: IndexPath?) -> UICollectionViewDropProposal {
-        if let indexPath = destinationIndexPath, indexPath.section == 1{
+        if let indexPath = destinationIndexPath, indexPath.section == 1 {
             let is_self = (session.localDragSession?.localContext as? UICollectionView) == emoji_collection_view_outlet
             return UICollectionViewDropProposal(operation: is_self ? .move : .copy, intent: .insertAtDestinationIndexPath)
         } else {
