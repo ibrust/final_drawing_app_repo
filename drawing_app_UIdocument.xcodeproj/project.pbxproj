@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A05CB7625867EC00088A209 /* ColoringBookList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A05CB7525867EC00088A209 /* ColoringBookList.swift */; };
 		3A4D17862581F27F003DF737 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17852581F27F003DF737 /* AppDelegate.swift */; };
 		3A4D17882581F27F003DF737 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */; };
 		3A4D178C2581F27F003DF737 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D178B2581F27F003DF737 /* Document.swift */; };
@@ -38,6 +39,7 @@
 		3A4D17FB2581F3CF003DF737 /* AddEmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */; };
 		3A4D18002581F41A003DF737 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D17FF2581F41A003DF737 /* Utilities.swift */; };
 		3A7A11592585A99500D1644D /* ButtonsWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A11582585A99500D1644D /* ButtonsWrapper.swift */; };
+		3A7A11612585F14F00D1644D /* ColoringBookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A11602585F14F00D1644D /* ColoringBookCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3A05CB7525867EC00088A209 /* ColoringBookList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringBookList.swift; sourceTree = "<group>"; };
 		3A4D17822581F27F003DF737 /* drawing_app_UIdocument.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drawing_app_UIdocument.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A4D17852581F27F003DF737 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A4D17872581F27F003DF737 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		3A4D17F62581F3CF003DF737 /* AddEmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddEmojiCell.swift; sourceTree = "<group>"; };
 		3A4D17FF2581F41A003DF737 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		3A7A11582585A99500D1644D /* ButtonsWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsWrapper.swift; sourceTree = "<group>"; };
+		3A7A11602585F14F00D1644D /* ColoringBookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColoringBookCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 				3A4D178D2581F27F003DF737 /* Main.storyboard */,
 				3A4D17F52581F3CF003DF737 /* TextInputCell.swift */,
 				3A7A11582585A99500D1644D /* ButtonsWrapper.swift */,
+				3A7A11602585F14F00D1644D /* ColoringBookCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				3A4D17DD2581F391003DF737 /* StrokeOptions.swift */,
 				3A4D178B2581F27F003DF737 /* Document.swift */,
 				3A4D17D92581F390003DF737 /* Fill Tool */,
+				3A05CB7525867EC00088A209 /* ColoringBookList.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -371,6 +377,8 @@
 				3A4D17CB2581F369003DF737 /* CanvasController.swift in Sources */,
 				3A4D17E02581F391003DF737 /* CustomBezierPath.swift in Sources */,
 				3A4D17CC2581F369003DF737 /* DrawController.swift in Sources */,
+				3A05CB7625867EC00088A209 /* ColoringBookList.swift in Sources */,
+				3A7A11612585F14F00D1644D /* ColoringBookCell.swift in Sources */,
 				3A4D178C2581F27F003DF737 /* Document.swift in Sources */,
 				3A4D17E42581F391003DF737 /* DrawingModes.swift in Sources */,
 				3A4D17F92581F3CF003DF737 /* EmojiCell.swift in Sources */,

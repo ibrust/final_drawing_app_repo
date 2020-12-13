@@ -27,7 +27,6 @@ class Emoji_Controller: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func add_emoji(){
-        print("ADDING EMOJI FUNC")
         adding_emoji = true
         emoji_collection_view_outlet.reloadSections(IndexSet(integer: 0))
     }
@@ -96,7 +95,6 @@ class Emoji_Controller: UIViewController, UICollectionViewDataSource, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, itemsForAddingTo session: UIDragSession, at indexPath: IndexPath, point: CGPoint) -> [UIDragItem] {
-        print("in items for adding to")
         return drag_items(at: indexPath)
     }
     

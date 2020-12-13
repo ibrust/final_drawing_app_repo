@@ -99,10 +99,15 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
         set {
             scroll_view_outlet?.zoomScale = 1.0
             image_view.image = newValue
-            canvas_view_outlet.background_image = newValue
+            
             let size = newValue?.size ?? CGSize.zero
             
             regular_view.frame = CGRect(origin: CGPoint.zero, size: size)
+            regular_view.subviews.forEach { $0.removeFromSuperview() }
+            
+            canvas_view_outlet.needs_refresh = false
+            canvas_view_outlet.draw_emojis = false
+            canvas_view_outlet.background_image = newValue
             
             scroll_view_outlet?.contentSize = size
             scroll_view_height?.constant = size.height
@@ -121,15 +126,6 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
         }
     }
     
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return regular_view
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        scroll_view_height.constant = scroll_view_outlet.contentSize.height
-        scroll_view_width.constant = scroll_view_outlet.contentSize.width
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.main_controller_reference?.canvas_controller_reference = self
@@ -139,10 +135,54 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
             background_image = UIImage(named: "Oranges")
         }
     }
-    
 }
 
-// drawing functions
+// ---------------------------------------------------------------------
+// scroll view zoom functions
+extension Canvas_Controller {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return regular_view
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        scroll_view_height.constant = scroll_view_outlet.contentSize.height
+        scroll_view_width.constant = scroll_view_outlet.contentSize.width
+    }
+}
+
+// ---------------------------------------------------------------------
+// drag and drop functions
+extension Canvas_Controller {
+    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
+        return session.canLoadObjects(ofClass: NSURL.self) && session.canLoadObjects(ofClass: UIImage.self)
+    }
+    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
+        return UIDropProposal(operation: .copy)
+    }
+    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
+        image_fetcher = ImageFetcher() { [weak self] (url, image) in
+            DispatchQueue.main.async {
+                guard let self = self else {return}
+                self.canvas_view_outlet.subviews.compactMap {
+                    $0 as? UILabel }.forEach { $0.removeFromSuperview() }
+                self.background_image = image
+            }
+        }
+        session.loadObjects(ofClass: NSURL.self) { nsurls in
+            if let url = nsurls.first as? URL {
+                self.image_fetcher.fetch(url)
+            }
+        }
+        session.loadObjects(ofClass: UIImage.self) { images in
+            if let image = images.first as? UIImage {
+                self.image_fetcher.backup = image
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+// drawing related functions
 extension Canvas_Controller {
     
     func start_touch(touches: Set<UITouch>, event: UIEvent?) {
@@ -232,7 +272,7 @@ extension Canvas_Controller {
     }
     
     func refresh_background_image(){
-        self.background_image = merge_imageview_and_canvas() 
+        self.background_image = merge_imageview_and_canvas()
     }
     
     func merge_imageview_and_canvas() -> UIImage? {
@@ -271,36 +311,4 @@ extension Canvas_Controller {
     func draw_and_remove_emojis(){
         self.canvas_view_outlet.draw_and_remove_emojis()
     }
-    
 }
-
-// drag and drop functions 
-extension Canvas_Controller {
-    func dropInteraction(_ interaction: UIDropInteraction, canHandle session: UIDropSession) -> Bool {
-        return session.canLoadObjects(ofClass: NSURL.self) && session.canLoadObjects(ofClass: UIImage.self)
-    }
-    func dropInteraction(_ interaction: UIDropInteraction, sessionDidUpdate session: UIDropSession) -> UIDropProposal {
-        return UIDropProposal(operation: .copy)
-    }
-    func dropInteraction(_ interaction: UIDropInteraction, performDrop session: UIDropSession) {
-        image_fetcher = ImageFetcher() { [weak self] (url, image) in
-            DispatchQueue.main.async {
-                guard let self = self else {return}
-                self.canvas_view_outlet.subviews.compactMap {
-                    $0 as? UILabel }.forEach { $0.removeFromSuperview() }
-                self.background_image = image
-            }
-        }
-        session.loadObjects(ofClass: NSURL.self) { nsurls in
-            if let url = nsurls.first as? URL {
-                self.image_fetcher.fetch(url)
-            }
-        }
-        session.loadObjects(ofClass: UIImage.self) { images in
-            if let image = images.first as? UIImage {
-                self.image_fetcher.backup = image
-            }
-        }
-    }
-}
- 

@@ -8,16 +8,18 @@
 import UIKit
 import MobileCoreServices
 
-class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var main_controller_reference: Main_Controller? = nil
-    var canvas_controller_reference: Canvas_Controller? = nil 
+    var canvas_controller_reference: Canvas_Controller? = nil
     
     var document: Document?
+    let CELL_ID = "coloring_book_cell"
     
-    @IBOutlet weak var camera_outlet: UIButton! {
+    @IBOutlet weak var coloring_book_collection_view_outlet: UICollectionView! {
         didSet {
-            camera_outlet.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+            coloring_book_collection_view_outlet.dataSource = self
+            coloring_book_collection_view_outlet.delegate = self
         }
     }
     
@@ -35,8 +37,10 @@ class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UIN
         document?.close()
     }
     
-    @IBAction func coloring_book_button_handler(_ sender: UIButton) {
-        
+    @IBOutlet weak var camera_outlet: UIButton! {
+        didSet {
+            camera_outlet.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        }
     }
     
     @IBAction func camera_button_handler(_ sender: UIButton) {
@@ -46,19 +50,6 @@ class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UIN
         camera_picker.allowsEditing = true
         camera_picker.delegate = self
         present(camera_picker, animated: true)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.presentingViewController?.dismiss(animated: true)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.presentingViewController?.dismiss(animated: true)
-        
-        if let image = ((info[UIImagePickerController.InfoKey.editedImage] ?? info[UIImagePickerController.InfoKey.originalImage]) as? UIImage) {
-            canvas_controller_reference?.background_image = image
-        }
     }
     
     func load_document() {
@@ -71,3 +62,47 @@ class Utility_Controller: UIViewController, UIImagePickerControllerDelegate, UIN
     }
 
 }
+
+// image picker functions (for camera)
+extension Utility_Controller {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.presentingViewController?.dismiss(animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        picker.presentingViewController?.dismiss(animated: true)
+        
+        if let image = ((info[UIImagePickerController.InfoKey.editedImage] ?? info[UIImagePickerController.InfoKey.originalImage]) as? UIImage) {
+            canvas_controller_reference?.background_image = image
+        }
+    }
+}
+
+// collection view functions
+extension Utility_Controller {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return coloring_book_images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = coloring_book_collection_view_outlet.dequeueReusableCell(withReuseIdentifier: CELL_ID, for: indexPath) as? Coloring_Book_Cell ?? Coloring_Book_Cell()
+        
+        let coloring_book_image = coloring_book_images[indexPath.row]
+                        
+        UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0.0);
+        coloring_book_image?.draw(in: cell.bounds)
+        let resized_image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        cell.coloring_book_image.image = resized_image
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        canvas_controller_reference?.background_image = coloring_book_images[indexPath.row]
+    }
+}
+ 
