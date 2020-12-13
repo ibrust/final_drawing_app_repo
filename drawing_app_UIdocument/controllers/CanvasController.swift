@@ -20,6 +20,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
     var canvas_view_outlet: Canvas_View! = Canvas_View()
     var image_view: UIImageView! = UIImageView()
     var regular_view: UIView! = UIView()
+    var use_default_image = false
     
     @IBOutlet weak var scroll_view_width: NSLayoutConstraint!
     @IBOutlet weak var scroll_view_height: NSLayoutConstraint!
@@ -134,6 +135,9 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
         self.main_controller_reference?.canvas_controller_reference = self
         self.canvas_view_outlet.delegate = self
         self.paths.predicted_path = Custom_Bezier_Path(self.stroke_options, drawing_mode, is_fill)
+        if self.use_default_image == true {
+            background_image = UIImage(named: "Oranges")
+        }
     }
     
 }

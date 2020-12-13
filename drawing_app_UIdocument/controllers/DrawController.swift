@@ -10,6 +10,9 @@ import UIKit
 class Draw_Controller: UIViewController {
 
     var canvas_controller_reference: Canvas_Controller? = nil
+    var main_controller_reference: Main_Controller? = nil
+    
+    @IBOutlet weak var segmented_control_outlet: UISegmentedControl!
     
     @IBAction func clear_button_pressed(_ sender: UIButton) {
         self.canvas_controller_reference?.clear_paths()
@@ -23,20 +26,25 @@ class Draw_Controller: UIViewController {
     @IBAction func segmented_control_pressed(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            self.canvas_controller_reference?.drawing_mode = .move
+            self.change_mode(.move)
         case 1:
-            self.canvas_controller_reference?.drawing_mode = .pencil
+            self.change_mode(.pencil)
         case 2:
-            self.canvas_controller_reference?.drawing_mode = .eraser
+            self.change_mode(.eraser)
         case 3:
-            self.canvas_controller_reference?.drawing_mode = .line
+            self.change_mode(.line)
         case 4:
-            self.canvas_controller_reference?.drawing_mode = .polyline
+            self.change_mode(.polyline)
         case 5:
-            self.canvas_controller_reference?.drawing_mode = .fill
+            self.change_mode(.fill)
         default:
             return
         }
+    }
+    
+    private func change_mode(_ new_mode: Drawing_Modes){
+        self.canvas_controller_reference?.drawing_mode = new_mode
+        self.main_controller_reference?.old_drawing_mode = new_mode
     }
     
 }

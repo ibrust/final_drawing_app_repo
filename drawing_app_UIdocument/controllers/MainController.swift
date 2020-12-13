@@ -3,25 +3,50 @@ import UIKit
 
 class Main_Controller: UIViewController {
     
-    var canvas_controller_reference: Canvas_Controller? = nil
     let TOTAL_CHILDREN = 5
+    
+    var canvas_controller_reference: Canvas_Controller? = nil
+    var draw_controller_reference: Draw_Controller? = nil
     var document: Document? = nil
+    var old_drawing_mode: Drawing_Modes = .move
+    var old_segmented_index: Int = 0
+    var use_default_image = false
+    
     
     @IBAction func toolbar_draw_button_press(_ sender: UIBarButtonItem) {
-        hide_containers()
-        Draw_Container.isHidden = false
+        change_toolbar(Draw_Container)
     }
     @IBAction func toolbar_color_button_press(_ sender: UIBarButtonItem) {
-        hide_containers()
-        Color_Container.isHidden = false
+        change_toolbar(Color_Container)
     }
     @IBAction func toolbar_emojis_button_press(_ sender: UIBarButtonItem) {
-        hide_containers()
-        Emojis_Container.isHidden = false
+        change_toolbar(Emojis_Container)
     }
     @IBAction func toolbar_utilities_button_press(_ sender: UIBarButtonItem) {
-        hide_containers()
-        Utilities_Container.isHidden = false
+        change_toolbar(Utilities_Container)
+    }
+    
+    private func change_toolbar(_ container: UIView){
+        // draw any emoji label added to the view & remove the label
+        if Emojis_Container.isHidden == false {
+            
+        }
+        
+        Draw_Container.isHidden = true
+        Utilities_Container.isHidden = true
+        Color_Container.isHidden = true
+        Emojis_Container.isHidden = true
+        
+        container.isHidden = false
+        
+        if Draw_Container.isHidden == true && Color_Container.isHidden == true {
+            canvas_controller_reference?.drawing_mode = .move
+            old_segmented_index = draw_controller_reference?.segmented_control_outlet.selectedSegmentIndex ?? 0
+            draw_controller_reference?.segmented_control_outlet.selectedSegmentIndex = 0;
+        } else {
+            canvas_controller_reference?.drawing_mode = old_drawing_mode
+            draw_controller_reference?.segmented_control_outlet.selectedSegmentIndex = old_segmented_index;
+        }
     }
     
     // container outlets
@@ -37,12 +62,6 @@ class Main_Controller: UIViewController {
     @IBOutlet weak var toolbar_emojis_button: UIBarButtonItem!
     @IBOutlet weak var toolbar_utilities_button: UIBarButtonItem!
     
-    private func hide_containers(){
-        Draw_Container.isHidden = true
-        Utilities_Container.isHidden = true
-        Color_Container.isHidden = true
-        Emojis_Container.isHidden = true
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 
@@ -57,14 +76,25 @@ class Main_Controller: UIViewController {
         }
         
         if self.children.count == TOTAL_CHILDREN {
+            
             for child in self.children {
+                if let child = child as? Canvas_Controller {
+                    if use_default_image == true {
+                        child.use_default_image = true
+                    }
+                }
                 if let child = child as? Draw_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
-                } else if let child = child as? Color_Controller {
+                    child.main_controller_reference = self
+                    self.draw_controller_reference = child
+                }
+                else if let child = child as? Color_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
-                } else if let child = child as? Emoji_Controller {
+                }
+                else if let child = child as? Emoji_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
-                } else if let child = child as? Utility_Controller {
+                }
+                else if let child = child as? Utility_Controller {
                     child.canvas_controller_reference = self.canvas_controller_reference
                     child.main_controller_reference = self
                     if document?.documentState != .normal {

@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3514" y="-107"/>
+            <point key="canvasLocation" x="-3505" y="-219"/>
         </scene>
         <!--Main_Controller-->
         <scene sceneID="WEf-Pd-z6Q">
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y56-7M-bLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1489.8550724637682" y="-144.64285714285714"/>
+            <point key="canvasLocation" x="-1497" y="-218"/>
         </scene>
         <!--Draw_Controller-->
         <scene sceneID="ruT-7M-sKK">
@@ -260,6 +260,9 @@
                             <constraint firstItem="NpS-DF-sKU" firstAttribute="leading" secondItem="rU6-P9-Uea" secondAttribute="leading" id="ziU-7r-ve3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmented_control_outlet" destination="7D1-at-uN6" id="Mb0-ga-Ou2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DoM-se-Hwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -620,7 +623,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjP-Vt-Y8E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2494.202898550725" y="-144.30803571428569"/>
+            <point key="canvasLocation" x="-2495" y="-181"/>
         </scene>
     </scenes>
     <resources>

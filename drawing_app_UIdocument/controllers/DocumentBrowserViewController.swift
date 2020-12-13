@@ -11,6 +11,7 @@ import UIKit
 class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocumentBrowserViewControllerDelegate {
     
     var template: URL?
+    var created_new_document = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didImportDocumentAt sourceURL: URL, toDestinationURL destinationURL: URL) {
         // Present the Document View Controller for the new newly created document
+        created_new_document = true
         presentDocument(at: destinationURL)
     }
     
@@ -64,6 +66,10 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
         let main_mvc = storyBoard.instantiateViewController(identifier: "main_MVC") as? Main_Controller
         
         if let main_mvc = main_mvc {
+            if created_new_document == true {
+                main_mvc.use_default_image = true
+            }
+            created_new_document = false
             main_mvc.document = Document(fileURL: documentURL)
             present(main_mvc, animated: true)
         }
