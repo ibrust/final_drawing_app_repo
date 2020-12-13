@@ -97,31 +97,50 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
             return image_view.image
         }
         set {
-            scroll_view_outlet?.zoomScale = 1.0
-            image_view.image = newValue
             
-            let size = newValue?.size ?? CGSize.zero
-            
-            regular_view.frame = CGRect(origin: CGPoint.zero, size: size)
-            regular_view.subviews.forEach { $0.removeFromSuperview() }
-            
-            canvas_view_outlet.needs_refresh = false
-            canvas_view_outlet.draw_emojis = false
-            canvas_view_outlet.background_image = newValue
-            
-            scroll_view_outlet?.contentSize = size
-            scroll_view_height?.constant = size.height
-            scroll_view_width?.constant = size.width
-            
-            self.scroll_view_outlet.addSubview(regular_view)
-            
-            image_view.frame = regular_view.bounds
-            regular_view.addSubview(image_view)
-            canvas_view_outlet.frame = regular_view.bounds
-            regular_view.addSubview(canvas_view_outlet)
-            
-            if let drop_zone_outlet = self.drop_zone_outlet, size.width > 0, size.height > 0 {
-                scroll_view_outlet?.zoomScale = max(drop_zone_outlet.bounds.size.width / (size.width / 2), drop_zone_outlet.bounds.size.height / (size.height / 2))
+            if var newValue = newValue {
+                if (newValue.size.width) > 1000 || (newValue.size.height) > 1000 {
+                    let max_dimension = max(newValue.size.width, newValue.size.height)
+                    let multiplier = CGFloat(1200.0 / Double(max_dimension))
+                    let new_width = CGFloat(newValue.size.width * multiplier)
+                    let new_height = CGFloat(newValue.size.height * multiplier)
+                    let new_size: CGSize = CGSize(width: new_width, height: new_height)
+                    let new_rect: CGRect = CGRect(x: 0, y: 0, width: new_width, height: new_height)
+                    
+                    UIGraphicsBeginImageContextWithOptions(new_size, false, 0.0)
+                    newValue.draw(in: new_rect)
+                    newValue = UIGraphicsGetImageFromCurrentImageContext() ?? newValue
+                    UIGraphicsEndImageContext()
+                }
+                
+                scroll_view_outlet?.zoomScale = 1.0
+                
+                image_view.image = newValue
+                
+                let size = newValue.size
+                
+                regular_view.frame = CGRect(origin: CGPoint.zero, size: size)
+                regular_view.subviews.forEach { $0.removeFromSuperview() }
+                
+                canvas_view_outlet.needs_refresh = false
+                canvas_view_outlet.draw_emojis = false
+                canvas_view_outlet.background_image = newValue
+                canvas_view_outlet.subviews.forEach { $0.removeFromSuperview() }
+                
+                scroll_view_outlet?.contentSize = size
+                scroll_view_height?.constant = size.height
+                scroll_view_width?.constant = size.width
+                
+                self.scroll_view_outlet.addSubview(regular_view)
+                
+                image_view.frame = regular_view.bounds
+                regular_view.addSubview(image_view)
+                canvas_view_outlet.frame = regular_view.bounds
+                regular_view.addSubview(canvas_view_outlet)
+                
+                if let drop_zone_outlet = self.drop_zone_outlet, size.width > 0, size.height > 0 {
+                    scroll_view_outlet?.zoomScale = max(drop_zone_outlet.bounds.size.width / (size.width / 2), drop_zone_outlet.bounds.size.height / (size.height / 2))
+                }
             }
         }
     }

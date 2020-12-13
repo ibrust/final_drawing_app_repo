@@ -20,7 +20,7 @@ class Custom_Bezier_Path: UIBezierPath {
         super.init()
         
         if self.mode == .eraser {
-            self.stroke_options?.color = UIColor.clear
+            self.stroke_options?.color = UIColor.white
         }
         self.lineCapStyle = .round
         self.lineJoinStyle = .round
