@@ -102,6 +102,7 @@ extension Utility_Controller {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        canvas_controller_reference?.partial_refresh = false
         canvas_controller_reference?.background_image = coloring_book_images[indexPath.row]
     }
 }

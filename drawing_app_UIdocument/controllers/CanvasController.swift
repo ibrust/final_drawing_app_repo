@@ -113,7 +113,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
                     original_image = newValue
                     
                     if ((newValue.size.width) > 1000 || (newValue.size.height) > 1000) {
-                        rescale_image(newValue)
+                        newValue = rescale_image(newValue)
                     }
                 }
                 
@@ -125,6 +125,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
                 
                 if partial_refresh == false {
                     setup_scroll_view(newValue)
+                    clear_paths()
                 }
                 partial_refresh = false
             }
