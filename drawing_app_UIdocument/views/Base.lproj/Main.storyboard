@@ -199,10 +199,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Zu-JUR" userLabel="SegTools View">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="239" height="41"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7D1-at-uN6" userLabel="segmented control">
-                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="42"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="7D1-at-uN6" secondAttribute="height" multiplier="5:1" id="0ec-Ey-RlU"/>
+                                                </constraints>
                                                 <segments>
                                                     <segment title="" image="move"/>
                                                     <segment title="" image="pencil"/>
@@ -216,7 +219,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-Jp-uWl">
-                                                <rect key="frame" x="160.5" y="0.0" width="27" height="41"/>
+                                                <rect key="frame" x="205" y="0.0" width="34" height="41"/>
                                                 <state key="normal" image="clear">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
@@ -238,10 +241,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="428-N6-A5c" userLabel="LineWidth View">
-                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="41"/>
+                                        <rect key="frame" x="239" y="0.0" width="136" height="41"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="HDB-tt-xAg">
-                                                <rect key="frame" x="19" y="7" width="170.5" height="28"/>
+                                                <rect key="frame" x="24.5" y="7" width="113.5" height="28"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="27" id="oDu-Dn-qVc"/>
                                                 </constraints>
@@ -250,7 +253,7 @@
                                                 </connections>
                                             </slider>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="brushes" translatesAutoresizingMaskIntoConstraints="NO" id="m0d-CL-JkZ">
-                                                <rect key="frame" x="0.0" y="10" width="21" height="21"/>
+                                                <rect key="frame" x="0.0" y="7" width="26.5" height="27"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="m0d-CL-JkZ" secondAttribute="height" multiplier="1:1" id="rTV-Yw-Tpc"/>
                                                 </constraints>
@@ -269,7 +272,6 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="m0d-CL-JkZ" firstAttribute="width" secondItem="GXb-Jp-uWl" secondAttribute="width" multiplier="0.777778" id="8JB-oK-X71"/>
-                                    <constraint firstItem="428-N6-A5c" firstAttribute="width" secondItem="tm3-Zu-JUR" secondAttribute="width" multiplier="1:1" id="zgO-tl-DiF"/>
                                 </constraints>
                             </stackView>
                         </subviews>
