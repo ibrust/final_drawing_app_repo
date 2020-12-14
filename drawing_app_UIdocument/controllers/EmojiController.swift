@@ -132,6 +132,8 @@ class Emoji_Controller: UIViewController, UICollectionViewDataSource, UICollecti
                         emoji_array.insert(attributed_string.string, at: destination_index_path.item)
                         emoji_collection_view_outlet.deleteItems(at: [source_index_path])
                         emoji_collection_view_outlet.insertItems(at: [destination_index_path])
+                        canvas_controller_reference?.canvas_view_outlet?.draw_emojis = true
+                        canvas_controller_reference?.canvas_view_outlet?.needs_refresh = false
                     })
                     coordinator.drop(item.dragItem, toItemAt: destination_index_path)
                 }

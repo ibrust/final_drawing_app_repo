@@ -12,7 +12,6 @@ protocol Canvas_View_Delegate{
     func mid_touch(touches: Set<UITouch>, event: UIEvent?)
     func end_touch(touches: Set<UITouch>, event: UIEvent?)
     func draw_paths(_ rect: CGRect?)
-    func clear_paths()
     func refresh_background_image()
 }
 
@@ -37,14 +36,7 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
         self.isOpaque = false
     }
     
-    var background_image: UIImage? {
-        didSet {
-            if needs_refresh == false {
-                print("refreshing")
-                self.delegate?.clear_paths()
-            }
-        }
-    }
+    var background_image: UIImage?
     
     var latest_rect: CGRect?
     
@@ -66,17 +58,18 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
                 $0.drawText(in: $0.frame)
                 $0.removeFromSuperview()
             }
-            
+            background_image = self.asImage()
         }
-        //else {
+        else {
             background_image?.draw(in: bounds)
-        //}
+        }
         delegate?.draw_paths(latest_rect)
         Custom_Renderer.shared.redraw_path = nil
     }
     
     func draw_and_remove_emojis(){
         draw_emojis = true
+        needs_refresh = false
         setNeedsDisplay()
     }
     
