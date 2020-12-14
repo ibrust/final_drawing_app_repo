@@ -195,14 +195,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-DF-sKU">
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-DF-sKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Zu-JUR" userLabel="SegTools View">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="41"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7D1-at-uN6" userLabel="segmented control">
-                                                <rect key="frame" x="0.0" y="0.0" width="151.5" height="42"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="160.5" height="42"/>
                                                 <segments>
                                                     <segment title="" image="move"/>
                                                     <segment title="" image="pencil"/>
@@ -216,10 +216,7 @@
                                                 </connections>
                                             </segmentedControl>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXb-Jp-uWl">
-                                                <rect key="frame" x="151.5" y="0.0" width="36" height="41"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="36" id="olo-qI-1Ms"/>
-                                                </constraints>
+                                                <rect key="frame" x="160.5" y="0.0" width="27" height="41"/>
                                                 <state key="normal" image="clear">
                                                     <attributedString key="attributedTitle"/>
                                                 </state>
@@ -235,6 +232,7 @@
                                             <constraint firstAttribute="bottom" secondItem="GXb-Jp-uWl" secondAttribute="bottom" id="RUK-5i-bag"/>
                                             <constraint firstAttribute="trailing" secondItem="GXb-Jp-uWl" secondAttribute="trailing" id="Rak-Qq-ieB"/>
                                             <constraint firstAttribute="bottom" secondItem="7D1-at-uN6" secondAttribute="bottom" id="WIy-IU-1mx"/>
+                                            <constraint firstItem="GXb-Jp-uWl" firstAttribute="width" secondItem="7D1-at-uN6" secondAttribute="width" multiplier="1:6" id="Zc1-Mr-ooe"/>
                                             <constraint firstItem="GXb-Jp-uWl" firstAttribute="top" secondItem="tm3-Zu-JUR" secondAttribute="top" id="mXz-2g-lGr"/>
                                             <constraint firstItem="GXb-Jp-uWl" firstAttribute="leading" secondItem="7D1-at-uN6" secondAttribute="trailing" id="sdN-d7-thz"/>
                                         </constraints>
