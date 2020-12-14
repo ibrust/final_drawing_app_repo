@@ -27,7 +27,7 @@ class Main_Controller: UIViewController {
     
     private func change_toolbar(_ container: UIView){
         // draw any emoji label added to the view & remove the label
-        if Emojis_Container.isHidden == false {
+        if Emojis_Container.isHidden == false { 
             canvas_controller_reference?.draw_and_remove_emojis()
         }
         

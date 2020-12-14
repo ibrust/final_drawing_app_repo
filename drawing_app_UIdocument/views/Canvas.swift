@@ -40,6 +40,7 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
     var background_image: UIImage? {
         didSet {
             if needs_refresh == false {
+                print("refreshing")
                 self.delegate?.clear_paths()
             }
         }
@@ -65,10 +66,11 @@ class Canvas_View: UIView, UIDropInteractionDelegate {
                 $0.drawText(in: $0.frame)
                 $0.removeFromSuperview()
             }
+            
         }
-        else {
+        //else {
             background_image?.draw(in: bounds)
-        }
+        //}
         delegate?.draw_paths(latest_rect)
         Custom_Renderer.shared.redraw_path = nil
     }

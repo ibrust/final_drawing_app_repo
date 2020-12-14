@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <device id="ipad12_9" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DocumentBrowserViewController" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="0fo-ii-Aj5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,14 +30,14 @@
             <objects>
                 <viewController storyboardIdentifier="main_MVC" modalPresentationStyle="fullScreen" id="iEn-fU-dGo" userLabel="Main_Controller" customClass="Main_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hiG-hk-cPn">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InH-dC-ScC" customClass="Buttons_Wrapper" customModule="drawing_app_UIdocument" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1251" width="1024" height="115"/>
+                                <rect key="frame" x="0.0" y="909" width="1366" height="115"/>
                                 <subviews>
                                     <toolbar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xjp-eU-cIW">
-                                        <rect key="frame" x="0.0" y="60" width="1024" height="55"/>
+                                        <rect key="frame" x="0.0" y="60" width="1366" height="55"/>
                                         <color key="backgroundColor" red="0.01660985119" green="0.077378485750000003" blue="0.55026570429999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="mFd-gl-t6O">
@@ -76,17 +76,17 @@
                                         <color key="tintColor" systemColor="systemIndigoColor"/>
                                     </toolbar>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YGg-Gp-Ilv" userLabel="Multiple Containers">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1366" height="60"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2o-8C-daI" userLabel="Border">
-                                                <rect key="frame" x="0.0" y="56" width="1024" height="4"/>
+                                                <rect key="frame" x="0.0" y="56" width="1366" height="4"/>
                                                 <color key="backgroundColor" red="0.95486992390000003" green="0.90980865749999995" blue="0.74765571600000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="4" id="RI5-Jl-KWd"/>
                                                 </constraints>
                                             </view>
                                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAd-Jc-bNv" userLabel="Draw_Container_View">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="DQQ-Rm-BW6">
                                                         <variation key="widthClass=regular" constant="56"/>
@@ -97,7 +97,7 @@
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eth-WW-c8C" userLabel="Utilities_Container_View">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="HPy-AQ-j2w">
                                                         <variation key="widthClass=regular" constant="56"/>
@@ -108,7 +108,7 @@
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qst-w8-6mP" userLabel="Color_Container_View">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="ATq-4i-6CA">
                                                         <variation key="widthClass=regular" constant="56"/>
@@ -119,7 +119,7 @@
                                                 </connections>
                                             </containerView>
                                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kZt-SY-ucQ" userLabel="Emojis_Container_View">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="41" id="ANr-u3-WVM">
                                                         <variation key="widthClass=regular" constant="56"/>
@@ -167,7 +167,7 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9X2-MK-8hh">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1251"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="909"/>
                                 <connections>
                                     <segue destination="Ngz-Zd-sN6" kind="embed" id="6z9-yD-KRz"/>
                                 </connections>
@@ -206,11 +206,11 @@
             <objects>
                 <viewController id="1OB-H9-mwc" userLabel="Draw_Controller" customClass="Draw_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rU6-P9-Uea">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-DF-sKU">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Zu-JUR" userLabel="SegTools View">
                                         <rect key="frame" x="0.0" y="0.0" width="457.5" height="56"/>
@@ -255,12 +255,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="428-N6-A5c" userLabel="LineWidth View">
-                                        <rect key="frame" x="457.5" y="0.0" width="566.5" height="56"/>
+                                        <rect key="frame" x="457.5" y="0.0" width="908.5" height="56"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="HDB-tt-xAg">
-                                                <rect key="frame" x="48.5" y="14.5" width="520" height="28"/>
+                                                <rect key="frame" x="48.5" y="3" width="862" height="51"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="oDu-Dn-qVc"/>
+                                                    <constraint firstAttribute="height" constant="27" id="oDu-Dn-qVc">
+                                                        <variation key="widthClass=regular" constant="50"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <connections>
                                                     <action selector="width_slider_changed:" destination="1OB-H9-mwc" eventType="valueChanged" id="fJw-l0-2X0"/>
@@ -324,7 +326,7 @@
             <objects>
                 <viewController id="Wxy-M1-pgo" userLabel="Utility_Controller" customClass="Utility_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h4d-Jw-IeW">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKa-al-vK2" userLabel="Save">
@@ -359,7 +361,7 @@
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hcn-Nm-mdM" userLabel="ColoringBookCollectionView">
-                                <rect key="frame" x="188.5" y="0.0" width="835.5" height="56"/>
+                                <rect key="frame" x="188.5" y="0.0" width="1177.5" height="56"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="2" id="RuN-Ch-f60">
                                     <size key="itemSize" width="35" height="35"/>
@@ -425,14 +427,14 @@
             <objects>
                 <viewController id="Hdn-R6-lq7" userLabel="Color_Controller" customClass="Color_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EgW-wV-pYE">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="m7K-TJ-Ogt">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-1r-6Qz" userLabel="Color_Collection_View">
-                                        <rect key="frame" x="0.0" y="0.0" width="511" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="682" height="56"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="1" minimumInteritemSpacing="1" id="0MG-em-5lr">
                                             <size key="itemSize" width="32" height="32"/>
@@ -473,22 +475,23 @@
                                         </cells>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3lM-pa-H6Z">
-                                        <rect key="frame" x="513" y="0.0" width="511" height="56"/>
+                                        <rect key="frame" x="684" y="0.0" width="682" height="56"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="z5T-WE-JQy">
-                                                <rect key="frame" x="19" y="14.5" width="494" height="28"/>
+                                                <rect key="frame" x="54" y="3" width="630" height="51"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="27" id="ya0-2O-Sug"/>
+                                                    <constraint firstAttribute="height" constant="27" id="ya0-2O-Sug">
+                                                        <variation key="widthClass=regular" constant="50"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <connections>
                                                     <action selector="opacity_slider_changed:" destination="Hdn-R6-lq7" eventType="valueChanged" id="iEO-Hb-Gdd"/>
                                                 </connections>
                                             </slider>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eye" translatesAutoresizingMaskIntoConstraints="NO" id="fEX-UK-2za">
-                                                <rect key="frame" x="0.0" y="17.5" width="21" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="56" height="56"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="05K-s0-F3d"/>
-                                                    <constraint firstAttribute="width" constant="21" id="nkO-Ey-dBF"/>
+                                                    <constraint firstAttribute="width" secondItem="fEX-UK-2za" secondAttribute="height" multiplier="1:1" id="OP4-fJ-75U"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -497,10 +500,13 @@
                                             <constraint firstItem="fEX-UK-2za" firstAttribute="top" secondItem="3lM-pa-H6Z" secondAttribute="top" constant="10" id="0Z6-Lc-zLc"/>
                                             <constraint firstAttribute="trailing" secondItem="z5T-WE-JQy" secondAttribute="trailing" id="35j-Ix-uil"/>
                                             <constraint firstItem="z5T-WE-JQy" firstAttribute="leading" secondItem="fEX-UK-2za" secondAttribute="trailing" id="7fG-OI-lYx"/>
+                                            <constraint firstItem="fEX-UK-2za" firstAttribute="top" secondItem="3lM-pa-H6Z" secondAttribute="top" id="95N-6E-zxz"/>
                                             <constraint firstItem="z5T-WE-JQy" firstAttribute="centerY" secondItem="3lM-pa-H6Z" secondAttribute="centerY" id="EJ1-eM-bLd"/>
                                             <constraint firstItem="fEX-UK-2za" firstAttribute="leading" secondItem="3lM-pa-H6Z" secondAttribute="leading" id="Yxt-oZ-ra7"/>
+                                            <constraint firstAttribute="bottom" secondItem="fEX-UK-2za" secondAttribute="bottom" id="ccl-ee-FAr"/>
                                             <constraint firstAttribute="bottom" secondItem="z5T-WE-JQy" secondAttribute="bottom" constant="7" id="e6n-Y0-7lh"/>
                                             <constraint firstItem="fEX-UK-2za" firstAttribute="centerY" secondItem="3lM-pa-H6Z" secondAttribute="centerY" id="swM-rZ-d5p"/>
+                                            <constraint firstItem="fEX-UK-2za" firstAttribute="leading" secondItem="3lM-pa-H6Z" secondAttribute="leading" id="tqB-xh-xij"/>
                                             <constraint firstItem="z5T-WE-JQy" firstAttribute="top" secondItem="3lM-pa-H6Z" secondAttribute="top" constant="7" id="ukr-1l-1iy"/>
                                         </constraints>
                                         <variation key="default">
@@ -545,11 +551,11 @@
             <objects>
                 <viewController id="4Il-4H-kUk" userLabel="Emoji_Controller" customClass="Emoji_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xlo-Mj-Kz3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jsx-h7-bKC">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="56"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="56"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="1" id="wta-Gt-eVP">
                                     <size key="itemSize" width="30" height="30"/>
@@ -674,11 +680,11 @@
             <objects>
                 <viewController id="Ngz-Zd-sN6" userLabel="Canvas Controller" customClass="Canvas_Controller" customModule="drawing_app_UIdocument" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ds5-cc-BZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1251"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="909"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jpc-5N-iuY" userLabel="Drop Zone">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1251"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1366" height="909"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNF-mS-c7B">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="735"/>

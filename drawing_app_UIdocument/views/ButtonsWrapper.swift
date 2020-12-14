@@ -13,7 +13,6 @@ class Buttons_Wrapper: UIView {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        print("touches began in wrapper")
         canvas_controller_reference?.draw_and_remove_emojis()
     }
 

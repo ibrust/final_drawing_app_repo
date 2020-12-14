@@ -28,6 +28,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
     var image_view: UIImageView! = UIImageView()
     var regular_view: UIView! = UIView()
     var use_default_image = false
+    var recent_fill = false
     
     @IBOutlet weak var scroll_view_width: NSLayoutConstraint!
     @IBOutlet weak var scroll_view_height: NSLayoutConstraint!
@@ -122,7 +123,10 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
                 
                 scroll_view_outlet?.zoomScale = 1.0
                 
-                image_view.image = newValue
+                if recent_fill == false {
+                    image_view.image = newValue
+                }
+                recent_fill = false
                 
                 let size = newValue.size
                 
@@ -233,7 +237,8 @@ extension Canvas_Controller {
             DispatchQueue.global(qos: .userInitiated).sync{ [weak self] in
                 guard let color = self?.stroke_options.color else {return}
                 let filled_image = view_image.pbk_imageByReplacingColorAt(x, y, withColor: color, tolerance: 1000)
-                canvas_view_outlet.background_image = filled_image
+                recent_fill = true
+                background_image = filled_image
                 self?.paths = Bezier_Paths()
                 return
             }
@@ -298,6 +303,7 @@ extension Canvas_Controller {
     }
     
     func refresh_background_image(){
+        recent_fill = true
         self.background_image = merge_imageview_and_canvas()
     }
     
