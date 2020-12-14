@@ -105,8 +105,7 @@ class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteracti
         get {
             return image_view.image
         }
-        set {
-            
+        set { 
             if var newValue = newValue {
                 
                 if partial_refresh == false {
