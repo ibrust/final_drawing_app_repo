@@ -198,7 +198,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NpS-DF-sKU">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="41"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Zu-JUR">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-Zu-JUR" userLabel="SegTools View">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="41"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7D1-at-uN6" userLabel="segmented control">
@@ -239,7 +239,7 @@
                                             <constraint firstItem="GXb-Jp-uWl" firstAttribute="leading" secondItem="7D1-at-uN6" secondAttribute="trailing" id="sdN-d7-thz"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="428-N6-A5c">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="428-N6-A5c" userLabel="LineWidth View">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="41"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="HDB-tt-xAg">

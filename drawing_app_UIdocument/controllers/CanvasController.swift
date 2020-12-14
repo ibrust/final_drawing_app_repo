@@ -7,6 +7,13 @@
 
 import UIKit
 
+
+// todo:
+// 1) get the clear button clearing emojis
+// 2) try to get the emojis a little larger when you paste them
+// 3) make the draw tools a fixed width if possible? see how it looks on different devices
+
+
 class Canvas_Controller: UIViewController, Canvas_View_Delegate, UIDropInteractionDelegate, UIScrollViewDelegate {
     
     var main_controller_reference: Main_Controller? = nil
@@ -225,7 +232,7 @@ extension Canvas_Controller {
             // async introduced too many bugs for now
             DispatchQueue.global(qos: .userInitiated).sync{ [weak self] in
                 guard let color = self?.stroke_options.color else {return}
-                let filled_image = view_image.pbk_imageByReplacingColorAt(x, y, withColor: color, tolerance: 10)
+                let filled_image = view_image.pbk_imageByReplacingColorAt(x, y, withColor: color, tolerance: 1000)
                 canvas_view_outlet.background_image = filled_image
                 self?.paths = Bezier_Paths()
                 return
